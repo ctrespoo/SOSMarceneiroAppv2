@@ -7,12 +7,19 @@
     "icon": "./assets/image/1.png",
     "userInterfaceStyle": "light",
 
+    "plugins": [
+      "@react-native-google-signin/google-signin",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth"
+    ],
+
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.monfadelivery.com"
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/image/1.png",
         "backgroundColor": "#ffffff"

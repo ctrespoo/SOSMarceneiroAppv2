@@ -6,11 +6,30 @@ import { Avatar } from 'react-native-paper'
 import { Colors } from '../theme/color'
 import style from '../theme/style'
 import { useNavigation } from '@react-navigation/native'
+import { GoogleSignin } from '@react-native-google-signin/google-signin'
+import auth from '@react-native-firebase/auth'
 
 const width = Dimensions.get('screen').width
 const height = Dimensions.get('screen').height
 
 export default function Login() {
+
+    GoogleSignin.configure({
+        webClientId: '814307894175-nls5fq8tuferm94ckva1c4u5ckofns0r.apps.googleusercontent.com',
+    })
+
+    async function onGoogleButtonPress() {
+        // Check if your device supports Google Play
+        await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true })
+        // Get the users ID token
+        const { idToken } = await GoogleSignin.signIn()
+
+        // Create a Google credential with the token
+        const googleCredential = auth.GoogleAuthProvider.credential(idToken)
+
+        // Sign-in the user with the credential
+        return auth().signInWithCredential(googleCredential)
+    }
 
     const navigation = useNavigation()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
@@ -81,7 +100,7 @@ export default function Login() {
                             </TouchableOpacity>
                         </View>
                         <View style={{ paddingTop: 15 }}>
-                            <TouchableOpacity style={[style.btn1, { borderColor: '#EDF1F8', borderWidth: 1, }]}>
+                            <TouchableOpacity onPress={() => onGoogleButtonPress().then(() => console.log('Signed in with Google!'))} style={[style.btn1, { borderColor: '#EDF1F8', borderWidth: 1, }]}>
                                 <Image source={require('../../assets/image/google.png')}
                                     resizeMode='stretch'
                                     style={{ height: height / 32, width: width / 15 }}></Image>

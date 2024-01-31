@@ -1,52 +1,52 @@
-import { View, Text, StatusBar } from "react-native";
-import React, { useState, useEffect } from "react";
+import { View, Text, StatusBar } from "react-native"
+import React, { useState, useEffect } from "react"
 import {
   NavigationContainer,
   DarkTheme,
   DefaultTheme,
-} from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { EventRegister } from "react-native-event-listeners";
-import { Colors } from "../theme/color";
+} from "@react-navigation/native"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { EventRegister } from "react-native-event-listeners"
+import { Colors } from "../theme/color"
 
-import Login from "../screens/Login";
-import Signup from "../screens/Signup";
-import Forgot from "../screens/Forgot";
-import Email from "../screens/Email";
-import Phone from "../screens/Phone";
-import NewPass from "../screens/NewPass";
-import Success from "../screens/Success";
-import FD1 from "../screens/FD1";
-import Search from "../screens/Search";
-import FavouriteTab from "../screens/FavouriteTab";
-import Splash from "../screens/Splash";
-import Introduction from "../screens/Introduction";
-import Otp from "../screens/Otp";
-import Otp2 from "../screens/Otp2";
-import Home from "../screens/Home";
-import FD2 from "../screens/FD2";
-import FD3 from "../screens/FD3";
-import SLocation from "../screens/SLocation";
-import Cart from "../screens/Cart";
-import Payment from "../screens/Payment";
-import PaymentSetting from "../screens/PaymentSetting";
-import Tracking from "../screens/Tracking";
-import Promo from "../screens/Promo";
-import Profile from "../screens/Profile";
-import Notification from "../screens/Notification";
-import DLocation from "../screens/DLocation";
-import EditProfile from "../screens/EditProfile";
-import MyTabs from "./BottomNavigator";
+import Login from "../screens/Login"
+import Signup from "../screens/Signup"
+import Forgot from "../screens/Forgot"
+import Email from "../screens/Email"
+import Phone from "../screens/Phone"
+import NewPass from "../screens/NewPass"
+import Success from "../screens/Success"
+import FD1 from "../screens/FD1"
+import Search from "../screens/Search"
+import FavouriteTab from "../screens/FavouriteTab"
+import Splash from "../screens/Splash"
+import Introduction from "../screens/Introduction"
+import Otp from "../screens/Otp"
+import Otp2 from "../screens/Otp2"
+import Home from "../screens/Home"
+import FD2 from "../screens/FD2"
+import FD3 from "../screens/FD3"
+import SLocation from "../screens/SLocation"
+import Cart from "../screens/Cart"
+import Payment from "../screens/Payment"
+import PaymentSetting from "../screens/PaymentSetting"
+import Tracking from "../screens/Tracking"
+import Promo from "../screens/Promo"
+import Profile from "../screens/Profile"
+import Notification from "../screens/Notification"
+import DLocation from "../screens/DLocation"
+import EditProfile from "../screens/EditProfile"
+import MyTabs from "./BottomNavigator"
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator()
 
 export default function StackNavigator() {
-  const [showSplashScreen, setshowSplashScreen] = useState(true);
+  const [showSplashScreen, setshowSplashScreen] = useState(false)
   useEffect(() => {
     setTimeout(() => {
-      setshowSplashScreen(false);
-    }, 4000);
-  }, []);
+      setshowSplashScreen(false)
+    }, 4000)
+  }, [])
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -194,5 +194,5 @@ export default function StackNavigator() {
         />
       </Stack.Navigator>
     </NavigationContainer>
-  );
+  )
 }
