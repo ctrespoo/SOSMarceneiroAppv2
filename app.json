@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "SOS do Marceneiro",
+    "slug": "SOS do Marceneiro",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/image/1.png",
+    "userInterfaceStyle": "light",
+
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.monfadelivery.com"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/image/1.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.monfadelivery.com"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
